@@ -406,6 +406,11 @@ section .projects {
     padding-top: 1.5rem;
 }
 
+#more {
+    width: auto;
+    height: fit-content;
+}
+
 .application-title {
     font-size: 1.5rem;
     font-weight: 500;
