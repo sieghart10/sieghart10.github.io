@@ -73,7 +73,8 @@ nav {
     box-sizing: border-box;
     transition: background-color 0.3s ease;
     z-index: 2;
-    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/ 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
 }
 
 nav ul {
@@ -115,9 +116,6 @@ nav:hover {
 /* Section */
 section {
     position: relative;
-    width: 100%;
-    height: 100%;
-    display: block;
     block-size: auto;
     padding: 3.8rem 0;
     background-color: transparent;
@@ -184,7 +182,6 @@ main{
 
 main .landing{
     top: -7rem;
-    width: 100%;
     height: auto;
     padding: 0;
     padding-top: 7.5rem;
@@ -221,7 +218,7 @@ nav .nav-logo {
     height: auto;
     max-width: auto;
     object-fit: cover;
-    background-blend-mode:color;
+    background-blend-mode:lighten;
 }
 
 .name-overlay {
@@ -271,18 +268,17 @@ iframe {
 
 /*ABOUT ME*/
 .about-me-body {
-    background: transparent;
     display: flex;
     flex-direction: column;
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
 }
 
 section .about-me {
     width: 100%;
     height: auto;
-    padding: 0;
-    transform: translateY(-7rem);
+    padding: 0; 
+
 }
 
 /* Item Styling */
@@ -368,26 +364,24 @@ section .about-me {
 }
 
 /*Projects*/
-
 .project-body {
     background: transparent;
-    flex-direction: column;
     width: 100%; 
-    height: 100%; 
+    height: 100%;
+    flex-direction: column;
 }
 
 .project-container {
     display: flex;
     flex-direction: column;
     width: 100%; 
-    height: 100%; 
+    height: fit-content; 
 }
 
 section .projects {
     width: 100%;
     height: auto;
     padding: 0;
-    transform: translateY(-5rem);
 }
 
 #projects {
@@ -396,6 +390,8 @@ section .projects {
 }
 
 #projects-paragraph {
+    display: flex;
+    flex: 1; 
     font-size: 1rem;
 }
 
@@ -403,7 +399,6 @@ section .projects {
     position: relative;
     height: auto; 
     display: block;
-    flex-direction: column;
     margin: 0 auto; 
     text-align: center;
     transform: translateY(4rem);
@@ -411,6 +406,7 @@ section .projects {
 }
 
 .project-title {
+    flex: 0 0 auto; 
     font-size: 2rem;
     font-weight: bold;
     color: #FFFFFF;
@@ -420,14 +416,23 @@ section .projects {
 
 .application-title {
     font-size: 1.5rem;
-    font-weight: Bold;
+    font-weight: 500;
     color: #FFFFFF;
     z-index: 2;
 }
 
 #more {
-    width: auto;
+    display: flex;
+    width: fit-content;
     height: fit-content;
+    margin: 0 auto;
+    color: #FFFFFF;
+}
+
+#more:hover {
+    color: #24c8ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
 }
 
 .application-title:hover {
@@ -437,17 +442,19 @@ section .projects {
 }
 
 #application-language {
+    width: fit-content;
     text-align: center;
+    margin: 0 auto;
     padding-bottom: 1rem;
 }
 
 .projects-square {
     width: 300px; 
     height: 350px;
-    display: block;
-    margin: 0 auto; 
-    transform: translateY(-38%); 
+    position: relative;
+    margin: 0 auto;
     z-index: 0;
+    bottom: 8rem;
 }
 
 /*Contacts*/
@@ -559,6 +566,12 @@ section .projects {
     width: 100%; 
     text-align: center; 
 }
+
+#right-side li a:hover {
+    color: #24c8ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+} 
 
 .icon {
     width: 50px;
@@ -704,6 +717,7 @@ section .projects {
     .about-me-body {
         flex-direction: column;
         height: 100%;
+        background: transparent;
     }
 
     #about-me {
@@ -791,20 +805,22 @@ section .projects {
         padding-top: 2rem;
     }
 
+    #left {
+        flex: 0 0 auto;
+    }
+
     #projects-paragraph {
+        margin: 0 auto 0;
         font-size: 2rem;
-        width: 52rem;
+        width: 40rem;
+        transform: translateY(5rem);
     }
 
     .application-title {
         white-space: nowrap;
+        font-size: 2rem;
     }
 
-    .applications {
-        left: 5rem;
-        top: 2rem;
-        height: 350px;
-    }
 
     #application-language {
         font-size: 1.5rem;
@@ -813,8 +829,12 @@ section .projects {
     .projects-square {
         width: 400px;
         height: 450px;
-        transform: translateY(1rem);
-        left: -15rem;
+        left: 11.2rem;
+        bottom: 11rem;
+    }
+
+    #more {
+        font-size: 1.5rem;
     }
 
     /*Contacts*/
@@ -855,9 +875,13 @@ section .projects {
         height: auto;
     }
 
+    #github {
+        left: 0.5rem;
+    }
+
     .icon-label {
         font-size: 2rem;
-        align-items: center;
+
     }
 }
 
